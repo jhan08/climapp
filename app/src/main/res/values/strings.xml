@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Climapp</string>
+    <string name="sensors_fragment">Sensors fragment</string>
+    <string name="actuators_fragment">Actuators fragment</string>
+</resources>
