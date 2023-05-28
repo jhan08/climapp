@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.climapp.MyMarkerView;
+import com.example.climapp.MyValueFormatter;
 import com.example.climapp.R;
 
 import com.example.climapp.models.Sensors;
@@ -61,7 +62,7 @@ public class SensorsFragment extends Fragment {
 
     private ArrayList<Entry> luminosities = new ArrayList<>();
     public static final float MINIMUM_LUMINOSITY = 0f;
-    public static final float MAXIMUM_LUMINOSITY = 1050f;
+    public static final float MAXIMUM_LUMINOSITY = 1020f;
 
     public static final String FORMAT_DATE_FULL = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     public static final String FORMAT_DATE_SHORT = "yyyy-MM-dd";
@@ -84,7 +85,7 @@ public class SensorsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        connectToDatabase();
+        getDataFromDatabase();
     }
 
     @Override
@@ -124,9 +125,11 @@ public class SensorsFragment extends Fragment {
 
     public void createChart(LineChart chart, float yAxisMinimum, float yAxisMaximum) {
         XAxis xAxis = chart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setAxisMinimum(0f);
         xAxis.setAxisMaximum(DAY_IN_MINUTES);
         xAxis.setDrawGridLines(false);
+        xAxis.setValueFormatter(new MyValueFormatter());
 
         YAxis yAxis = chart.getAxisLeft();
         yAxis.setAxisMinimum(yAxisMinimum);
@@ -138,8 +141,7 @@ public class SensorsFragment extends Fragment {
 
     private void setDataToChart(LineChart chart, ArrayList<Entry> values, String label) {
         LineDataSet set1;
-        if (chart.getData() != null &&
-                chart.getData().getDataSetCount() > 0) {
+        if (chart.getData() != null && chart.getData().getDataSetCount() > 0) {
             set1 = (LineDataSet) chart.getData().getDataSetByIndex(0);
             set1.setValues(values);
             chart.getData().notifyDataChanged();
@@ -161,7 +163,7 @@ public class SensorsFragment extends Fragment {
         }
     }
 
-    private void connectToDatabase() {
+    private void getDataFromDatabase() {
         LocalDateTime today = LocalDateTime.of(LocalDate.now(), LocalTime.of(0, 0));
         String todayFormatted = DateTimeFormatter.ofPattern(FORMAT_DATE_SHORT).format(today);
 
