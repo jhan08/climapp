@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "139709183777",
+    "firebase_url": "https://climapp-hum-lum-temp-default-rtdb.firebaseio.com",
+    "project_id": "climapp-hum-lum-temp",
+    "storage_bucket": "climapp-hum-lum-temp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139709183777:android:a44308624979eabe3ff060",
+        "android_client_info": {
+          "package_name": "com.example.climapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139709183777-0gre9ka9jo90v2uldjlbv599i078j15l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByUvGsVAAsrwjYro-JWzhbpF2aViIkW6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "139709183777-0gre9ka9jo90v2uldjlbv599i078j15l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

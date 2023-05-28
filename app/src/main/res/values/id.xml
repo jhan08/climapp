@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="temperature_label" type="id"/>
+    <item name="temperature_chart" type="id"/>
+    <item name="temperature_chart_wrapper" type="id"/>
+    <item name="humidity_chart" type="id"/>
+    <item name="humidity_label" type="id"/>
+    <item name="humidity_chart_wrapper" type="id"/>
+    <item name="luminosity_label" type="id"/>
+    <item name="luminosity_chart" type="id"/>
+    <item name="luminosity_chart_wrapper" type="id"/>
+</resources>

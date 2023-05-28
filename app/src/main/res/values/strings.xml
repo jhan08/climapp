@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Climapp</string>
-    <string name="sensors_fragment">Sensors fragment</string>
+    <string name="temperature_label">Temperature</string>
+    <string name="humidity_label">Humidity</string>
+    <string name="luminosity_label">Luminosity</string>
     <string name="actuators_fragment">Actuators fragment</string>
 </resources>
