@@ -109,7 +109,7 @@ public class SensorsFragment extends Fragment {
         mv.setChartView(humidityChart);
 
         createChart(humidityChart, MINIMUM_HUMIDITY, MAXIMUM_HUMIDITY);
-        setDataToChart(humidityChart, luminosities, "humidity");
+        setDataToChart(humidityChart, humidities, "humidity");
 
         LineChart luminosityChart = view.findViewById(R.id.luminosity_chart);
         luminosityChart.setTouchEnabled(true);
